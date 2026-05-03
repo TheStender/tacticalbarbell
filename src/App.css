@@ -110,6 +110,7 @@
   cursor: pointer;
   transition: opacity 0.15s;
   text-decoration: none;
+  box-sizing: border-box;
 }
 .btn:disabled { opacity: 0.45; cursor: default; }
 .btn-primary  { background: var(--accent); color: #fff; }
