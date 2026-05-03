@@ -1,0 +1,315 @@
+/* App-level layout */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* Every view gets this wrapper */
+.view {
+  flex: 1;
+  padding: 1rem 1rem 5rem; /* bottom pad clears nav bar */
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   View headers
+   ============================================================ */
+.view-header {
+  margin-bottom: 1.25rem;
+}
+.view-header h1 {
+  margin: 0 0 0.15rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-h);
+}
+.view-header p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.phase-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+.card-sub {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin-top: 0.15rem;
+}
+
+/* Session type tags */
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+.tag-strength  { background: rgba(59,130,246,0.12); color: #3b82f6; border-color: rgba(59,130,246,0.3); }
+.tag-walkrun   { background: rgba(34,197,94,0.12);  color: #16a34a; border-color: rgba(34,197,94,0.3);  }
+.tag-lss       { background: rgba(34,197,94,0.12);  color: #16a34a; border-color: rgba(34,197,94,0.3);  }
+.tag-hic       { background: rgba(239,68,68,0.12);  color: #dc2626; border-color: rgba(239,68,68,0.3);  }
+.tag-bike      { background: rgba(245,158,11,0.12); color: #d97706; border-color: rgba(245,158,11,0.3); }
+.tag-ruck      { background: rgba(124,58,237,0.12); color: #7c3aed; border-color: rgba(124,58,237,0.3); }
+.tag-versa     { background: rgba(6,182,212,0.12);  color: #0891b2; border-color: rgba(6,182,212,0.3);  }
+.tag-done      { background: rgba(34,197,94,0.15);  color: #15803d; border-color: rgba(34,197,94,0.4);  }
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  text-decoration: none;
+}
+.btn:disabled { opacity: 0.45; cursor: default; }
+.btn-primary  { background: var(--accent); color: #fff; }
+.btn-ghost    { background: transparent; color: var(--accent); border: 1px solid var(--accent-border); }
+.btn-danger   { background: rgba(239,68,68,0.12); color: #dc2626; border: 1px solid rgba(239,68,68,0.3); }
+.btn-full     { width: 100%; }
+.btn-sm       { padding: 0.4rem 0.85rem; font-size: 0.8rem; }
+
+/* ============================================================
+   Progress bar
+   ============================================================ */
+.progress-wrap {
+  height: 6px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: width 0.3s ease;
+}
+
+/* ============================================================
+   Lift rows (strength logger)
+   ============================================================ */
+.lift-block {
+  margin-bottom: 1.25rem;
+}
+.lift-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-h);
+  margin-bottom: 0.1rem;
+}
+.lift-target {
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.set-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border);
+}
+.set-label {
+  min-width: 2.5rem;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+.set-check {
+  width: 1.4rem;
+  height: 1.4rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.set-input {
+  width: 4rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.set-input-label {
+  font-size: 0.78rem;
+  color: var(--text);
+}
+
+/* ============================================================
+   History list
+   ============================================================ */
+.history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.history-item:last-child { border-bottom: none; }
+.history-date { font-size: 0.78rem; color: var(--text); }
+.history-title { font-weight: 600; color: var(--text-h); font-size: 0.95rem; }
+.history-detail { font-size: 0.82rem; color: var(--text); }
+
+/* ============================================================
+   Settings — 1RM inputs
+   ============================================================ */
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  gap: 0.75rem;
+}
+.setting-row:last-child { border-bottom: none; }
+.setting-label { font-weight: 600; font-size: 0.95rem; color: var(--text-h); }
+.setting-sub { font-size: 0.8rem; color: var(--text); }
+.setting-input {
+  width: 5.5rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  font-size: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Bottom Nav Bar
+   ============================================================ */
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: stretch;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+  padding-bottom: 2px;
+}
+.nav-item.active { color: var(--accent); }
+.nav-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* ============================================================
+   Section labels
+   ============================================================ */
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 1.25rem 0 0.5rem;
+}
+
+/* ============================================================
+   Empty states
+   ============================================================ */
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text);
+}
+.empty-state p { margin: 0.25rem 0; }
+.empty-state .em { font-size: 2rem; margin-bottom: 0.5rem; }
+
+/* ============================================================
+   Completion banner
+   ============================================================ */
+.banner {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.banner-success { background: rgba(34,197,94,0.12); color: #15803d; border: 1px solid rgba(34,197,94,0.3); }
+.banner-info    { background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-border); }
+
+/* ============================================================
+   Print styles
+   ============================================================ */
+@media print {
+  .nav-bar,
+  .btn,
+  .set-check { display: none !important; }
+  .view { padding: 0; max-width: none; }
+  .card { border: 1px solid #ccc; break-inside: avoid; }
+}
+
