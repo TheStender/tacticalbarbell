@@ -9,5 +9,5 @@ export default defineConfig({
   build: {
     outDir: 'docs',
   },
-  base: '/fitness-tracker/',
+  // base removed — Netlify serves from root
 })
